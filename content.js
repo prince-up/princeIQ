@@ -2,6 +2,7 @@
 
 let explanationPanel = null;
 let isSelecting = false;
+let panelJustOpened = false;
 
 // Listen for text selection
 document.addEventListener('mouseup', handleTextSelection);
@@ -47,6 +48,9 @@ function showExplanationButton(text, event) {
   
   button.onclick = (e) => {
     e.stopPropagation();
+    e.preventDefault();
+    // Set flag before opening
+    panelJustOpened = true;
     showExplanation(text, button);
   };
   
@@ -57,6 +61,9 @@ function showExplanationButton(text, event) {
 async function showExplanation(text, triggerElement) {
   // Remove trigger button
   triggerElement.remove();
+  
+  // Set flag to prevent immediate closing
+  panelJustOpened = true;
   
   // Create explanation panel
   const panel = document.createElement('div');
@@ -78,7 +85,20 @@ async function showExplanation(text, triggerElement) {
   explanationPanel = panel;
   
   // Close button handler
-  document.getElementById('princex-close-btn').onclick = hideExplanationPanel;
+  document.getElementById('princex-close-btn').onclick = (e) => {
+    e.stopPropagation();
+    hideExplanationPanel();
+  };
+  
+  // Prevent clicks inside panel from closing it
+  panel.addEventListener('click', (e) => {
+    e.stopPropagation();
+  }, true);
+  
+  // Allow closing after 1000ms (1 second delay)
+  setTimeout(() => {
+    panelJustOpened = false;
+  }, 1000);
   
   // Get explanation
   const explanation = await generateExplanation(text);
@@ -463,14 +483,20 @@ function hideExplanationPanel() {
   }
 }
 
-// Close panel when clicking outside
+// Close panel when clicking outside (with delay to prevent immediate close)
 document.addEventListener('click', (e) => {
+  // Don't close if panel just opened
+  if (panelJustOpened) {
+    return;
+  }
+  
   if (explanationPanel && 
       !explanationPanel.contains(e.target) && 
-      !e.target.closest('#princex-trigger-btn')) {
+      !e.target.closest('#princex-trigger-btn') &&
+      e.target.id !== 'princex-trigger-btn') {
     hideExplanationPanel();
   }
-});
+}, true);
 
 // Close panel on Escape key
 document.addEventListener('keydown', (e) => {

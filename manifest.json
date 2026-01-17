@@ -5,7 +5,8 @@
   "description": "Highlight any text to get instant explanations - perfect for students and developers",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "scripting"
   ],
   "content_scripts": [
     {
