@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrinceX</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .container {
+      padding: 24px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-box h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .info-box p {
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      font-size: 13px;
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      opacity: 0.95;
+    }
+
+    .steps li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      background: rgba(255, 255, 255, 0.2);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      opacity: 0.7;
+      margin-top: 16px;
+    }
+
+    .version {
+      background: rgba(255, 255, 255, 0.1);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">PrinceX</div>
+    <div class="tagline">Your CS Concept Companion</div>
+    
+    <div class="info-box">
+      <h3>How to Use</h3>
+      <ul class="steps">
+        <li>Highlight any text on the page</li>
+        <li>Click the "Explain" button</li>
+        <li>Get instant explanations</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>Works On</h3>
+      <p>GitHub, VS Code, Stack Overflow, LeetCode, GeeksforGeeks, PDFs, and more!</p>
+    </div>
+
+    <div class="info-box">
+      <h3>AI-Powered</h3>
+      <p>Configure your OpenAI API key in settings to explain ANY concept!</p>
+    </div>
+
+    <div class="footer">
+      Made for CS Students
+      <div class="version">v1.0.0</div>
+    </div>
+  </div>
+</body>
+</html>

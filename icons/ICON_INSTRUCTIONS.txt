@@ -1,0 +1,19 @@
+<!-- Icon Placeholder - Replace with actual PNG icons -->
+<!-- Create 16x16, 48x48, and 128x128 PNG icons with your PrinceX logo -->
+
+To create icons:
+1. Use a tool like Canva, Figma, or Photoshop
+2. Design a logo with "P" or "PX" on a purple gradient background
+3. Export as PNG in three sizes: 16x16, 48x48, 128x128
+4. Name them: icon16.png, icon48.png, icon128.png
+5. Place them in the icons/ folder
+
+Quick option: Use an online icon generator like:
+- favicon.io
+- icons8.com
+- flaticon.com
+
+For now, you can use temporary placeholder icons from:
+https://via.placeholder.com/16
+https://via.placeholder.com/48
+https://via.placeholder.com/128
